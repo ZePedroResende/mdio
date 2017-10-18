@@ -30,5 +30,3 @@ D >= X2+Y2;
 D >= X3+Y3;
 D >= X4+Y4;
 D >= X5+Y5;
-
-int X1,Y1,X2,Y2,X3,Y3,X4,Y4,X5,Y5,XD,YD;
