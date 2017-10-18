@@ -120,7 +120,7 @@ def printDesenvolvimento():
 
 
 print(confirmacao)
-if(any(confirmacao)):
+if(all(confirmacao)):
     print("Passou todas as verificacoes ! ")
     printDesenvolvimento()
 else:
