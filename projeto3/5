@@ -1,12 +1,18 @@
-As atividades que decorrem em paralelo sao 1,7,10
 
 0 |####
-1 |######
-3 |##
-4 |#########
-5 |#####
+1 |           ######
+3 |                        ##
+4 |           #########
+5 |                    ####
 6 |#####
-7 |######
-9 |##
-10|########
-11|#######
+7 |     ######
+9 |                     ##
+10|     ########
+11|              #######
+
+
+
+
+As restrições das relações de dependencias mantiveram-se validas nesta solução.
+Das atividades selecionadas (1,7,10) a 1 e 7 nao decorrem paralelamente tal como foi restringido. A atividade 10 é executada externamente uma vez que a variavel y10 (variavel binaria associada a atividade 10) toma o valor 1 na soluçao obtida , o que leva a que esta dure mais 1 unidade (demorando mais 1 unidade a terminar como se pode ver no diagrama de gant).
+O projeto inicialmente tinha o valor de 26 U.T. e manteve esse resultado uma vez que a maior durançao da atividade 10 nao influenciou a duração final do projeto .

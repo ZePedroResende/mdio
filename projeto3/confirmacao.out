@@ -1,0 +1,27 @@
+t6 >= ti + 0 = True
+ t10 >= t6 + 5 = True
+ t7 >= t6 + 5 = True
+ t0 >= ti + 0 = True
+ t1 >= t0 + 4 = True
+ t4 >= t0 + 4 = True
+ t3 >= t1 + y1 + 6 = True
+ t3 >= t4 + 9 = True
+ t3 >= t5 + 4 = True
+ tf >= t3 + 2 = True
+ t5 >= t4 + 9 = True
+ tf >= t5 + 4 = True
+ t4 >= t7 + y7 + 6 = True
+ tf >= t9 + 2 = True
+ t5 >= t7 + y7 + 6 = True
+ t9 >= t7 + y7 + 6 = True
+ t5 >= t10 + y10 + 8 = True
+ t9 >= t10 + y10 + 8 = True
+ t9 >= t11 + 7 = True
+ t11 >= t10 + y10 + 8 = True
+ t1 >= t7 + 6 - 1000 * y7 - 1000 * y1 - 1000 + 1000 * r1_7 = True
+ t1 >= t10 + 8 - 1000 * y10 - 1000 * y1 - 1000 + 1000 * r1_10 = True
+ t7 >= t1 + 6 - 1000 * y1 - 1000 * y7 - 1000 * r1_7 = True
+ t7 >= t10 + 8 - 1000 * y10 - 1000 * y7 - 1000 + 1000 * r7_10 = True
+ t10 >= t1 + 6 - 1000 * y1 - 1000 * y10 - 1000 * r1_10 = True
+ t10 >= t7 + 6 - 1000 * y7 - 1000 * y10 - 1000 * r7_10 = True
+ y1 + y7 + y10 <= 1 = True
