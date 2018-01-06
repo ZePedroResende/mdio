@@ -1,0 +1,57 @@
+Variáveis de Decisão:
+   t{i} : instante de tempo em que se inicia o projeto (U.T.);
+   t{k} : instante de tempo em que se inicia a execução da atividade k do projeto (U.T.);
+   t{f} : instante de tempo em que se finaliza o projeto (U.T.);
+   y{j} : 1, se a atividade j for 0, caso contrário
+   y (j1, j2) : 1, se a atividade j 1 for realizada depois da atividade j2, 0 caso contrário com
+                k ∈ { 0,1,3,4,5,6,7,9,10,11 } , j ∈ { 1,7,10 } e ( j1 , j 2 ) ∈ {( 1,7 ) , ( 1,10 ) ,(7,10)}.
+
+min z = t{f}
+
+ t{1} ≥ t0 + 4( arco_01 )
+ t{3}  ≥ t{1} + y{1} +6  (arco_13)
+ t{0} ≥ t{i} +0  (arco_i0)
+ t{4} ≥ t{0} +4  (arco_04)
+ t{3} ≥ t{4} + 9  (arco_43)
+ t{3} ≥ t{5} + 4  (arco_53)
+ t{f} ≥ t{3} + 2  (arco_3f)
+ t{5} ≥ t{4} +9  (arco_45)
+ t{f} ≥ t{5} + 4   (arco_5f)
+ t{6} ≥ t{i} + 0  (arco_i6)
+ t{4} ≥ t{7} + y{7} + 6  (arco_74)
+ t{5} ≥ t{7} + y{7} + 6  (arco_75)
+ t{5} ≥ t{10} + y{10} + 8  (arco_105)
+ t{f} ≥ t{9}  2  (arco_9f)
+ t{7} ≥ t{6} + 5  (arco_67)
+ t{9} ≥ t{7} + y{7} + 6  (arco_79)
+ t{9} ≥ t{10} + y{10} +8  (arco_109)
+ t{10} ≥ t{6} + 5  (arco_610)
+ t{9} ≥ t{11} + 7  (arco_119)
+ t{11} ≥ t{10} + y{10} +8  (arco_1011)
+
+        //tk >= tj + dj
+        // ou tk >= tj + yj + dj  caso j seja uma das atividades selecionadas anteriormente {1,7,10}
+
+
+
+ t{1} >= t{7} +6 -1000 ×  y{7} -1000×  y{1} -1000+1000 ×  r{1_7}
+ t{1} >= t{10} + 8-1000×  y{10} -1000 ×  y{1} -1000+1000 ×  r{1_10}
+ t{7} >= t{1} +6 -1000 ×  y{1} -1000×  y{7} -1000 ×  r{1_7}
+ t{7} >= t{10} + 8-1000×  y{10} -1000 ×  y{7} -1000+1000 ×  r{7_10}
+ t{10} >= t{1} + 6-1000×  y{1} -1000 ×  y{10} - 1000 ×  r{1_10}
+ t{10} >= t{7} +6 -1000 ×  y{7} -1000×  y{10} -1000 ×  r{7_10}
+
+        //tj >= tk + dk - M * yi - M * rkj                 -- k sucede  j
+        //tk >= tj + dj − M * yj − M * yk − M * (1−rkj )   -- k precede j
+        // relacao precedencia entre os vertices selecionados anteriormente {1,7,10}
+        // avaliar se essa relacao e mais ou igualmente vantajosa que a inversa
+
+ y{1} + y{7} + y{10} <= 1
+
+        // limita numero de atividades que podem ser executadas externamente a 1
+
+
+ t{i}, t{k}, t{f}>=0 e inteiros
+ y{j}: {0,1}
+ r{(j1,j2)}: {0,1}
+   (j1,j2):{(1,7),(1,10),(7,10)}
